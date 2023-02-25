@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
-body {
-  background: #fff;
+.grid {
+  display: grid;
+  grid-template-columns: 13rem;
 }
 
-.grid {
-	display: grid;
+.header {
+  grid-area: header;
 }
 
 .logo {
-	grid-area: logo;
+  grid-area: logo;
 }
 
 .content {
-	grid-area: content;
+  grid-area: content;
+  height: auto;
 }
 
 .sidenav {
-	grid-area: sidenav;
+  grid-area: sidenav;
+  height: auto;
+  
 }
 
 .footer {
-	grid-area: footer;
+  grid-area: footer;
 }
 
 .title {
@@ -31,14 +35,16 @@ body {
   margin-left: 15rem;
   text-align: center;
   font-weight: normal;
+
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   width: 200px;
-  
+
 }
+
 li a {
   font-size: x-large;
   display: block;
@@ -56,30 +62,70 @@ li a:hover {
 }
 
 .grid-template {
-	grid-template-areas:
-		"logo content content "
-		"sidenav content content"
-		"sidenav content content"
-		;
+  grid-template-areas:
+    "logo header"
+    "sidenav content"
+  ;
 }
 
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  width: auto;
+  height: auto;
+}
+
+
 .nav {
-  height: 50px;
+  max-width: fit-content;
 }
 
 .column-gap {
-	gap: 2px;
-	column-gap: 50px;
+  gap: 2px;
+  column-gap: 50px;
 }
 
-/*
+.sun_logo {
+  width: 20%;
+}
+
 .links {
-  text-decoration: #111111;
   font-size: x-large;
   font-family: 'Courier New', monospace;
-  text-shadow: 7px 7px #111111;
   color: inherit;
-} */
+}
+
+.projects {
+ 
+}
 
 .p {
   margin-left: 5rem;
@@ -90,10 +136,11 @@ li a:hover {
   background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
   color: #eee;
   min-width: 360px;
-  width: 80%;
+  width: 98%;
   justify-content: center;
   perspective: 1000px;
   perspective-origin: 50% 50%;
+  background-color: transparent;
 
 }
 
