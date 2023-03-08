@@ -1,143 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
-.grid {
-  display: grid;
-  grid-template-columns: 13rem;
-}
-
-.header {
-  grid-area: header;
-}
-
-.logo {
-  grid-area: logo;
-}
-
-.content {
-  grid-area: content;
-  height: auto;
-}
-
-.sidenav {
-  grid-area: sidenav;
-  height: auto;
-  
-}
-
-.footer {
-  grid-area: footer;
-}
-
-.title {
-  font-size: 4rem;
-  font-family: 'Courier New', monospace;
-  text-shadow: 7px 7px #111111;
-  margin-left: 15rem;
-  text-align: center;
-  font-weight: normal;
-
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  width: 200px;
-
-}
-
-li a {
-  font-size: x-large;
-  display: block;
-  color: #ffffff;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-family: 'Courier New', monospace;
-  box-shadow: 10px 30px 50px 10px rgb(0, 0, 0);
-}
-
-/* Change the link color on hover */
-li a:hover {
-  background-color: #555;
-  color: white;
-}
-
-.grid-template {
-  grid-template-areas:
-    "logo header"
-    "sidenav content"
-  ;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-  width: auto;
-  height: auto;
-}
-
-
-.nav {
-  max-width: fit-content;
-}
-
-.column-gap {
-  gap: 2px;
-  column-gap: 50px;
-}
-
-.sun_logo {
-  width: 20%;
-}
-
-.links {
-  font-size: x-large;
-  font-family: 'Courier New', monospace;
-  color: inherit;
-}
-
-.projects {
- 
-}
-
-.p {
-  margin-left: 5rem;
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
 }
 
 .wrapper {
   animation: scroll 600s linear infinite;
   background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
   color: #eee;
-  min-width: 360px;
-  width: 98%;
-  justify-content: center;
+  width: 100%;
   perspective: 1000px;
   perspective-origin: 50% 50%;
   background-color: transparent;
@@ -150,15 +22,108 @@ li a:hover {
   }
 }
 
-@media (prefers-reduced-motion) {
-  .wrapper {
-    animation: scroll 200s linear infinite;
-  }
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  height: 75px;
+  width: 100%;
+  background-color: #1616169d;
+  position: relative;
+  box-shadow: 0 20px 50px 0 rgba(26, 26, 26, 0.603), 0 10px 20px 0 rgba(26, 26, 26, 0.603);
 }
 
-@media (max-width: 767px) {
-  .title {
-    font-size: 2rem;
-    margin-left: 2rem;
+.logo {
+  width: max-content;
+}
+
+.nav>.nav-header {
+  display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+  justify-content: none;
+  align-items: none;
+  display: inline-block;
+  font-size: 22px;
+  color: #e0e0e0;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+  display: none;
+}
+
+.nav>.nav-links {
+  display: inline;
+  font-size: 18px;
+}
+
+.nav>.nav-links>a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav>.nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav>.nav-btn>label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .nav>.nav-btn>label>span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+
+  .nav>.nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+
+  .nav>.nav-links>a {
+    display: block;
+    width: 100%;
+  }
+
+  .nav>#nav-check:not(:checked)~.nav-links {
+    height: 0px;
+  }
+
+  .nav>#nav-check:checked~.nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
   }
 }
