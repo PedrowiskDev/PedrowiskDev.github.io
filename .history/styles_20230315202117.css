@@ -47,7 +47,6 @@ body {
 }
 
 .nav>.nav-header>.nav-title {
-
   font-size: 22px;
   color: #e0e0e0;
   padding: 0px 10px 10px 10px;
@@ -127,12 +126,10 @@ img {
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  box-shadow: 50px 20px 50px 50px rgba(26, 26, 26, 0.603), 0 10px 20px 0 rgba(26, 26, 26, 0.603);
+  box-shadow: 0 -20px -50px 0 rgba(26, 26, 26, 0.603), 0 -10px -20px 0 rgba(26, 26, 26, 0.603);
   width: fit-content;
   width: 100%;
-  background-color: #1616169d;
+
 }
 
 .logop {

@@ -127,7 +127,6 @@ img {
 }
 
 .footer {
-  display: flex;
   justify-content: center;
   box-shadow: 50px 20px 50px 50px rgba(26, 26, 26, 0.603), 0 10px 20px 0 rgba(26, 26, 26, 0.603);
   width: fit-content;
